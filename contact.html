@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact — DevCraft Agency</title>
+  <meta name="description" content="Start a project with DevCraft — tell us about your goals."/>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/animations.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/nav.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+  <style>
+    .contact-form { display:flex; flex-direction:column; gap:12px; }
+    .form-input { width:100%; padding:12px 14px; border:1px solid var(--border); border-radius:8px; font-size:1rem }
+    .sr-only { position:absolute; left:-9999px; }
+    .card { padding:28px }
+  </style>
+</head>
+<body>
+  <div id="nav-placeholder"></div>
+  <main class="page-wrap">
+    <div class="page-hero">
+      <div class="container">
+        <div class="breadcrumb"><a href="index.html">Home</a><span class="breadcrumb-sep">›</span>Contact</div>
+        <div class="mono-label">Get in touch</div>
+        <h1 class="display-2">Let's build something<br><span class="accent">great.</span></h1>
+        <p class="lead">Tell us about your project — we'll respond within 24 hours.</p>
+      </div>
+    </div>
+    <section class="section">
+      <div class="container">
+        <div class="card">
+          <form action="#" class="contact-form">
+            <label class="sr-only">Name</label>
+            <input type="text" name="name" placeholder="Your name" class="form-input" />
+            <label class="sr-only">Email</label>
+            <input type="email" name="email" placeholder="Your email" class="form-input" />
+            <label class="sr-only">Message</label>
+            <textarea name="message" rows="6" placeholder="Tell us about your project" class="form-input"></textarea>
+            <div style="margin-top:18px;">
+              <button class="btn btn-primary" type="submit">Send Message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="footer-placeholder"></div>
+  <script src="../js/components.js"></script>
+  <script src="../js/nav.js"></script>
+</body>
+</html>

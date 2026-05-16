@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Service — DevCraft Agency</title>
+  <meta name="description" content="Explore DevCraft's services — from e-commerce to full stack web applications." />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/animations.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/nav.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+</head>
+<body>
+  <div id="nav-placeholder"></div>
+  <main class="page-wrap" id="svc-page">
+    <!-- Dynamic content injected by JS below -->
+  </main>
+  <div id="footer-placeholder"></div>
+  <script src="../js/components.js"></script>
+  <script src="../js/nav.js"></script>
+  <script>
+  // ── Service Data ──
+  const SERVICES = {
+    'service-ecommerce.html': {
+      num: '01', icon: '🛒',
+      title: 'E-Commerce Development',
+      tagline: 'Stores that sell. Systems that scale.',
+      desc: 'We build conversion-optimized online stores with seamless checkout flows, inventory management, payment gateway integrations, and performance-tuned product pages.',
+      tags: ['React', 'Node.js', 'MongoDB', 'Stripe', 'JWT Auth'],
+      features: [
+        { icon: '🛍️', h: 'Product Catalog', p: 'Category filtering, search, variant management, and dynamic product pages.' },
+        { icon: '💳', h: 'Payment Integration', p: 'Stripe, Razorpay, and other gateways with secure checkout and order tracking.' },
+        { icon: '📦', h: 'Inventory System', p: 'Real-time stock management, low-stock alerts, and admin control panel.' },
+        { icon: '📊', h: 'Analytics Dashboard', p: 'Sales metrics, revenue charts, and customer behavior insights.' },
+        { icon: '🔒', h: 'Secure Auth', p: 'JWT authentication, role-based access, and secure session management.' },
+        { icon: '📱', h: 'Mobile-First', p: 'Fully responsive across all screen sizes for maximum reach.' },
+      ],
+      process: [
+        { n:'01', h:'Store Planning', p:'We map your product catalog, user flows, and payment requirements.' },
+        { n:'02', h:'UI/UX Design', p:'Wireframes and high-fidelity mockups tailored to your brand.' },
+        { n:'03', h:'Development', p:'Frontend store + backend API + database integration.' },
+        { n:'04', h:'Testing & Launch', p:'Thorough QA across devices and browsers, then seamless deployment.' },
+      ],
+      related: [
+        { href:'service-dashboard.html', icon:'📊', h:'Dashboard Development', p:'Build admin panels to manage your store.' },
+        { href:'service-fullstack.html', icon:'⚡', h:'Full Stack Apps', p:'Custom logic beyond standard e-commerce.' },
+        { href:'service-uiux.html', icon:'✏️', h:'UI/UX Design', p:'Design that converts browsers to buyers.' },
+      ],
+    },
+    'service-portfolio.html': {
+      num: '02', icon: '🎨',
+      title: 'Portfolio Websites',
+      tagline: 'First impressions that last.',
+      desc: 'Stunning portfolio sites crafted to showcase your work, personality, and expertise. Stand out with animated transitions, case study layouts, and a design that genuinely reflects you.',
+      tags: ['Next.js', 'Tailwind CSS', 'Framer Motion', 'TypeScript'],
+      features: [
+        { icon: '✨', h: 'Custom Animations', p: 'Scroll-triggered reveals, page transitions, and interactive hover states.' },
+        { icon: '📁', h: 'Case Study Pages', p: 'Rich project pages with images, descriptions, and tech stacks.' },
+        { icon: '🎭', h: 'Brand Identity', p: 'Fonts, palettes, and layouts that authentically represent your style.' },
+        { icon: '⚡', h: 'Performance', p: 'Lighthouse 95+ scores across performance, SEO, and accessibility.' },
+        { icon: '📱', h: 'Responsive', p: 'Flawless across mobile, tablet, and desktop.' },
+        { icon: '🔗', h: 'Contact Integration', p: 'Built-in contact forms with email notifications.' },
+      ],
+      process: [
+        { n:'01', h:'Discovery', p:'Understanding your work, personality, and the impression you want to leave.' },
+        { n:'02', h:'Design Concepts', p:'3 unique visual directions for you to choose and refine.' },
+        { n:'03', h:'Build', p:'Pixel-perfect development with animations and interactive states.' },
+        { n:'04', h:'Launch', p:'Deployed to your domain with custom email and SEO configuration.' },
+      ],
+      related: [
+        { href:'service-uiux.html', icon:'✏️', h:'UI/UX Design', p:'Design systems that elevate your brand.' },
+        { href:'service-landing.html', icon:'🚀', h:'Landing Pages', p:'Single-page conversion-focused sites.' },
+        { href:'service-business.html', icon:'🏢', h:'Business Websites', p:'Multi-page professional presence.' },
+      ],
+    },
+    'service-dashboard.html': {
+      num: '03', icon: '📊',
+      title: 'Dashboard Development',
+      tagline: 'Data made actionable.',
+      desc: 'We design and build data-rich admin panels and analytics dashboards with real-time feeds, interactive charts, role-based access, and clean, intuitive interfaces.',
+      tags: ['React', 'REST APIs', 'Recharts', 'Socket.io', 'Node.js'],
+      features: [
+        { icon: '📈', h: 'Interactive Charts', p: 'Bar, line, pie, and area charts with drill-down and filtering.' },
+        { icon: '⚡', h: 'Real-Time Data', p: 'WebSocket connections for live data feeds and instant updates.' },
+        { icon: '👥', h: 'Role-Based Access', p: 'Admin, manager, and viewer roles with granular permissions.' },
+        { icon: '🗂️', h: 'Data Tables', p: 'Sortable, filterable, paginated tables with export to CSV/PDF.' },
+        { icon: '🔔', h: 'Notifications', p: 'In-app alerts, email triggers, and threshold-based warnings.' },
+        { icon: '📱', h: 'Responsive UI', p: 'Optimized for both desktop operations and mobile monitoring.' },
+      ],
+      process: [
+        { n:'01', h:'Requirements', p:'Mapping all data sources, user roles, and key metrics to display.' },
+        { n:'02', h:'Wireframes', p:'Low-fidelity layout planning before visual design begins.' },
+        { n:'03', h:'Development', p:'Frontend dashboard + backend API integration + real-time layer.' },
+        { n:'04', h:'Delivery', p:'Testing, QA, and handover with full documentation.' },
+      ],
+      related: [
+        { href:'service-fullstack.html', icon:'⚡', h:'Full Stack Apps', p:'Custom applications with dashboard cores.' },
+        { href:'service-ecommerce.html', icon:'🛒', h:'E-Commerce', p:'Store analytics and sales dashboards.' },
+        { href:'service-uiux.html', icon:'✏️', h:'UI/UX Design', p:'Design systems that inform without overwhelming.' },
+      ],
+    },
+    'service-landing.html': {
+      num: '04', icon: '🚀',
+      title: 'Landing Pages',
+      tagline: 'One page. Maximum impact.',
+      desc: 'Conversion-optimized landing pages that communicate your value proposition instantly and guide visitors toward your goal — be it signups, purchases, or inquiries.',
+      tags: ['HTML/CSS', 'JavaScript', 'Animations', 'SEO', 'Performance'],
+      features: [
+        { icon: '🎯', h: 'Conversion-Focused', p: 'CTA placement, copywriting structure, and flow engineered to convert.' },
+        { icon: '⚡', h: 'Speed Optimized', p: 'Sub-2-second load times. Every KB matters for conversions.' },
+        { icon: '🔍', h: 'SEO Ready', p: 'Meta tags, structured data, and semantic HTML for discoverability.' },
+        { icon: '📊', h: 'Analytics Ready', p: 'Google Analytics, Facebook Pixel, and conversion tracking built in.' },
+        { icon: '🖼️', h: 'Scroll Animations', p: 'Smooth reveals and motion that keeps visitors engaged.' },
+        { icon: '📱', h: 'Mobile First', p: 'Designed mobile-first, then refined for larger screens.' },
+      ],
+      process: [
+        { n:'01', h:'Strategy', p:'Defining your goal, audience, and key value proposition.' },
+        { n:'02', h:'Copy & Design', p:'Wireframe layout with headline, subheads, and CTA hierarchy.' },
+        { n:'03', h:'Development', p:'Pixel-perfect build with animations and form integrations.' },
+        { n:'04', h:'Launch', p:'A/B test-ready deployment with analytics and tracking.' },
+      ],
+      related: [
+        { href:'service-business.html', icon:'🏢', h:'Business Websites', p:'Full multi-page professional sites.' },
+        { href:'service-uiux.html', icon:'✏️', h:'UI/UX Design', p:'Design that drives decision-making.' },
+        { href:'service-portfolio.html', icon:'🎨', h:'Portfolio Sites', p:'Showcase your personal brand.' },
+      ],
+    },
+    'service-business.html': {
+      num: '05', icon: '🏢',
+      title: 'Business Websites',
+      tagline: 'Your digital headquarters.',
+      desc: 'Multi-page professional websites that establish credibility, communicate your brand story, and generate qualified leads — built to grow with your business.',
+      tags: ['Next.js', 'CMS', 'SEO', 'TypeScript', 'API Integration'],
+      features: [
+        { icon: '🏗️', h: 'Multi-Page Structure', p: 'Home, About, Services, Blog, Team, Contact — fully linked and optimized.' },
+        { icon: '✍️', h: 'CMS Integration', p: 'Headless CMS for easy content updates without developer help.' },
+        { icon: '🔍', h: 'SEO Foundation', p: 'Technical SEO, sitemap, robots.txt, and structured data built in.' },
+        { icon: '📞', h: 'Lead Generation', p: 'Contact forms, CTA sections, and newsletter integrations.' },
+        { icon: '📱', h: 'Fully Responsive', p: 'Optimized for every device from mobile to ultra-wide.' },
+        { icon: '⚡', h: 'Fast Loading', p: 'Static generation and CDN delivery for blazing-fast performance.' },
+      ],
+      process: [
+        { n:'01', h:'Brand Discovery', p:'Understanding your industry, competitors, and differentiators.' },
+        { n:'02', h:'Sitemap & Design', p:'Information architecture and full visual design system.' },
+        { n:'03', h:'Development', p:'Page-by-page build with CMS integration and SEO configuration.' },
+        { n:'04', h:'Launch & Training', p:'Deployment with a walkthrough on how to update your content.' },
+      ],
+      related: [
+        { href:'service-landing.html', icon:'🚀', h:'Landing Pages', p:'Targeted pages for campaigns.' },
+        { href:'service-uiux.html', icon:'✏️', h:'UI/UX Design', p:'Brand-consistent design systems.' },
+        { href:'service-fullstack.html', icon:'⚡', h:'Full Stack Apps', p:'Add custom functionality to your site.' },
+      ],
+    },
+    'service-uiux.html': {
+      num: '06', icon: '✏️',
+      title: 'UI/UX Design',
+      tagline: 'Design that thinks before it looks.',
+      desc: 'User-centered design from research to final high-fidelity prototypes. We create design systems, component libraries, and interaction flows that are as logical as they are beautiful.',
+      tags: ['Figma', 'Design Systems', 'Prototyping', 'User Research', 'Accessibility'],
+      features: [
+        { icon: '🔬', h: 'User Research', p: 'Persona definition, user journey mapping, and competitive analysis.' },
+        { icon: '🗺️', h: 'Wireframing', p: 'Low and mid-fidelity wireframes to validate layout and flow.' },
+        { icon: '🎨', h: 'Visual Design', p: 'Brand-consistent high-fidelity mockups in Figma with design tokens.' },
+        { icon: '⚙️', h: 'Design Systems', p: 'Scalable component libraries with documented usage guidelines.' },
+        { icon: '🎬', h: 'Prototyping', p: 'Interactive Figma prototypes for user testing and stakeholder review.' },
+        { icon: '♿', h: 'Accessibility', p: 'WCAG AA compliance built into every design decision.' },
+      ],
+      process: [
+        { n:'01', h:'Research Phase', p:'User interviews, competitive audit, and problem framing.' },
+        { n:'02', h:'Ideation', p:'Sketches, information architecture, and low-fidelity wireframes.' },
+        { n:'03', h:'Design', p:'High-fidelity mockups, design system, and interactive prototype.' },
+        { n:'04', h:'Handoff', p:'Developer-ready Figma files with annotated specs and assets.' },
+      ],
+      related: [
+        { href:'service-portfolio.html', icon:'🎨', h:'Portfolio Sites', p:'Design that showcases your work.' },
+        { href:'service-landing.html', icon:'🚀', h:'Landing Pages', p:'CRO-focused design.' },
+        { href:'service-fullstack.html', icon:'⚡', h:'Full Stack Apps', p:'Designed and built end-to-end.' },
+      ],
+    },
+    'service-fullstack.html': {
+      num: '07', icon: '⚡',
+      title: 'Full Stack Web Applications',
+      tagline: 'From idea to production.',
+      desc: 'End-to-end web applications with modern React frontends, secure Node.js backends, scalable databases, authentication systems, and cloud deployment — built to handle real production loads.',
+      tags: ['React', 'Node.js', 'TypeScript', 'PostgreSQL', 'Docker', 'REST APIs'],
+      features: [
+        { icon: '⚛️', h: 'Modern Frontend', p: 'React or Next.js SPA/SSR with TypeScript and Tailwind CSS.' },
+        { icon: '🔧', h: 'Robust Backend', p: 'Node.js + Express REST API with input validation and error handling.' },
+        { icon: '🗄️', h: 'Database Architecture', p: 'MongoDB or PostgreSQL with optimized schemas and query performance.' },
+        { icon: '🔐', h: 'Auth Systems', p: 'JWT, OAuth2, refresh tokens, and role-based access control.' },
+        { icon: '🐳', h: 'Containerized', p: 'Docker compose for consistent local dev and production environments.' },
+        { icon: '☁️', h: 'Cloud Deployment', p: 'Deployed to AWS, Vercel, or Railway with CI/CD pipelines.' },
+      ],
+      process: [
+        { n:'01', h:'Architecture Planning', p:'System design, database schema, API contracts, and tech stack decisions.' },
+        { n:'02', h:'Design & Prototype', p:'UI/UX design and frontend architecture planning.' },
+        { n:'03', h:'Iterative Development', p:'Two-week sprints with demos, feedback, and incremental delivery.' },
+        { n:'04', h:'Deploy & Monitor', p:'Production deployment with monitoring, logging, and ongoing support.' },
+      ],
+      related: [
+        { href:'service-dashboard.html', icon:'📊', h:'Dashboard Development', p:'Data interfaces for your app.' },
+        { href:'service-ecommerce.html', icon:'🛒', h:'E-Commerce', p:'Commerce-ready full stack apps.' },
+        { href:'service-uiux.html', icon:'✏️', h:'UI/UX Design', p:'Design before you build.' },
+      ],
+    },
+  };
+
+  // ── Render current service ──
+  document.addEventListener('DOMContentLoaded', () => {
+    const page = location.pathname.split('/').pop() || '';
+    const svc = SERVICES[page];
+    const main = document.getElementById('svc-page');
+    if (!svc || !main) return;
+
+    document.title = `${svc.title} — DevCraft Agency`;
+
+    main.innerHTML = `
+      <!-- Hero -->
+      <div class="page-hero">
+        <div class="container">
+          <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <span class="breadcrumb-sep">›</span>
+            <a href="services.html">Services</a>
+            <span class="breadcrumb-sep">›</span>
+            ${svc.title}
+          </div>
+          <div class="svc-hero-grid mt-hero">
+            <div>
+              <div class="mono-label">${svc.num} / 07</div>
+              <h1 class="display-2 anim-fade-up">${svc.title}</h1>
+              <p class="lead anim-fade-up delay-1">${svc.desc}</p>
+              <div class="tag-list anim-fade-up delay-2">
+                ${svc.tags.map(t => `<span class="tag">${t}</span>`).join('')}
+              </div>
+              <div class="mt-xl anim-fade-up delay-3">
+                <a href="contact.html" class="btn btn-primary">Start This Project →</a>
+              </div>
+            </div>
+            <div class="svc-tech-visual anim-fade-in delay-2">
+              <div class="mono-label">Tech Stack</div>
+              <div class="svc-tech-row">
+                ${svc.tags.map(t => `<span class="badge"><span class="badge-dot"></span>${t}</span>`).join('')}
+              </div>
+              <div class="svc-tech-divider">
+                <div class="mono-label">Service Type</div>
+                <div class="icon-xl">${svc.icon}</div>
+                <div class="svc-tagline">${svc.tagline}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Features -->
+      <section class="section">
+        <div class="container">
+          <div class="section-header reveal">
+            <div class="mono-label">What's Included</div>
+            <h2 class="display-3">Everything you need,<br>nothing you don't.</h2>
+          </div>
+          <div class="svc-features">
+            ${svc.features.map((f,i) => `
+              <div class="svc-feature reveal delay-${(i%3)+1}">
+                <div class="svc-feature-icon">${f.icon}</div>
+                <div class="svc-feature-text">
+                  <h5>${f.h}</h5>
+                  <p>${f.p}</p>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- Process -->
+      <section class="section">
+        <div class="container">
+          <div class="section-header reveal">
+            <div class="mono-label">Our Process</div>
+            <h2 class="display-3">How we'll work together.</h2>
+          </div>
+          <div class="process-grid">
+            ${svc.process.map((p,i) => `
+              <div class="process-item reveal delay-${i+1}">
+                <div class="process-item-num">${p.n}</div>
+                <h4>${p.h}</h4>
+                <p>${p.p}</p>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- Related Services -->
+      <section class="section">
+        <div class="container">
+          <div class="section-header reveal">
+            <div class="mono-label">Related Services</div>
+            <h2 class="display-3">You might also need.</h2>
+          </div>
+          <div class="related-services">
+            ${svc.related.map((r,i) => `
+              <a href="${r.href}" class="related-card reveal delay-${i+1}">
+                <div class="related-card-icon">${r.icon}</div>
+                <h4>${r.h}</h4>
+                <p>${r.p}</p>
+              </a>
+            `).join('')}
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section section-no-top">
+        <div class="container">
+          <div class="card card-centered reveal">
+            <div class="mono-label">Get Started</div>
+            <h2 class="display-3">Ready to build your<br><span class="accent">${svc.title.toLowerCase()}?</span></h2>
+            <p class="lead lead-cta">Let's talk about your project and get things moving.</p>
+            <div class="btn-group-center">
+              <a href="contact.html" class="btn btn-primary">Start a Project →</a>
+              <a href="services.html" class="btn btn-outline">All Services</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    `;
+
+    // Re-run reveal observer on newly injected elements
+    const els = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(el => io.observe(el));
+  });
+  </script>
+</body>
+</html>
