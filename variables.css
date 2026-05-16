@@ -1,12 +1,11 @@
 /* ============================================================
-   DEVCRAFT AGENCY — DESIGN TOKENS / CSS VARIABLES
-   Include this FIRST before all other CSS files
+   DEVCRAFT AGENCY — DESIGN TOKENS (LIGHT THEME)
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
-  /* ── Palette ── */
+  /* ── Red Accent ── */
   --red:            #C8102E;
   --red-dark:       #9A0B22;
   --red-pale:       #FDF0F2;
@@ -14,23 +13,23 @@
   --red-soft:       rgba(200,16,46,0.07);
 
   /* ── Backgrounds ── */
-  --bg:             #0D0D0F;
-  --bg2:            #141418;
-  --surface:        #1A1A1F;
-  --surface2:       #202028;
+  --bg:             #FFFFFF;
+  --bg2:            #F7F6F4;
+  --surface:        #FFFFFF;
+  --surface2:       #F2F1EF;
 
   /* ── Borders ── */
-  --border:         rgba(255,255,255,0.08);
-  --border2:        rgba(255,255,255,0.15);
+  --border:         #E8E6E1;
+  --border2:        #D0CCC5;
 
   /* ── Text ── */
-  --text:           #F0EEE8;
-  --text2:          #A09C95;
-  --text3:          #5A5650;
+  --text:           #1A1714;
+  --text2:          #6B6762;
+  --text3:          #A09C95;
 
-  /* ── Accent ── */
-  --violet:         #7C6FFF;
-  --cyan:           #00D4C8;
+  /* ── Accents ── */
+  --violet:         #5B50E8;
+  --cyan:           #0097A7;
 
   /* ── Typography ── */
   --font-display:   'Cormorant Garamond', Georgia, serif;
@@ -44,9 +43,9 @@
   --r-xl:           24px;
 
   /* ── Shadows ── */
-  --shadow-sm:      0 2px 8px rgba(0,0,0,0.3);
-  --shadow-md:      0 8px 32px rgba(0,0,0,0.4);
-  --shadow-red:     0 8px 32px rgba(200,16,46,0.25);
+  --shadow-sm:      0 2px 8px rgba(0,0,0,0.06);
+  --shadow-md:      0 8px 32px rgba(0,0,0,0.09);
+  --shadow-red:     0 8px 32px rgba(200,16,46,0.15);
 
   /* ── Easing ── */
   --ease-out:       cubic-bezier(0.16, 1, 0.3, 1);
@@ -142,12 +141,22 @@ a { color: inherit; text-decoration: none; }
 .btn-primary {
   background: var(--red);
   color: #fff;
-  box-shadow: 0 4px 16px rgba(200,16,46,0.3);
+  box-shadow: 0 4px 16px rgba(200,16,46,0.25);
 }
 .btn-primary:hover {
   background: var(--red-dark);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(200,16,46,0.4);
+  box-shadow: 0 8px 24px rgba(200,16,46,0.35);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--text2);
+  border: 1px solid var(--border2);
+}
+.btn-outline:hover {
+  border-color: var(--red);
+  color: var(--red);
+  background: var(--red-soft);
 }
 .btn-full      { width: 100%; }
 .btn-no-shrink { flex-shrink: 0; }
@@ -177,6 +186,7 @@ a { color: inherit; text-decoration: none; }
   gap: 32px;
   position: relative;
   overflow: hidden;
+  background: var(--bg2);
 }
 .card-cta-row::before {
   content: '';
@@ -184,15 +194,15 @@ a { color: inherit; text-decoration: none; }
   right: -80px; top: -80px;
   width: 280px; height: 280px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(200,16,46,0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(200,16,46,0.08) 0%, transparent 70%);
   pointer-events: none;
 }
 .card-cta-row > * { position: relative; z-index: 1; }
 .card-cta-row .display-3 { margin-bottom: 0; }
 
-/* ── Page Hero (breadcrumb + title area) ── */
+/* ── Page Hero ── */
 .page-hero {
-  background: var(--bg);
+  background: var(--bg2);
   border-bottom: 1px solid var(--border);
   padding: 80px 0 72px;
 }
@@ -205,6 +215,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--text3);
   margin-bottom: 24px;
 }
+.breadcrumb a { color: var(--text2); transition: color 0.2s; }
 .breadcrumb a:hover { color: var(--red); }
 .breadcrumb-sep { color: var(--text3); }
 
@@ -236,17 +247,29 @@ a { color: inherit; text-decoration: none; }
   100% { background-position:  600px 0; }
 }
 @keyframes rotateSlow {
-  from { transform: translate(-50%, 0) rotate(0deg); }
-  to   { transform: translate(-50%, 0) rotate(360deg); }
+  from { transform: translate(-50%,0) rotate(0deg); }
+  to   { transform: translate(-50%,0) rotate(360deg); }
 }
-@keyframes fillBar {
-  from { width: 0 !important; }
+@keyframes orbFloat {
+  0%,100% { transform: translateY(0) scale(1); }
+  50%      { transform: translateY(-20px) scale(1.03); }
 }
-@keyframes tagPop {
-  from { opacity: 0; transform: scale(0.78) translateY(8px); }
-  to   { opacity: 1; transform: scale(1) translateY(0); }
+@keyframes scrollLine {
+  0%,100% { transform: scaleY(1); opacity: 1; }
+  50%      { transform: scaleY(0.4); opacity: 0.4; }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes borderPulse {
+  0%,100% { box-shadow: 0 0 0 0 rgba(220,38,38,0.3); }
+  50%      { box-shadow: 0 0 0 8px rgba(220,38,38,0); }
 }
 .anim-fade-up { animation: fadeUp 0.65s 0.1s var(--ease-out) both; }
+
+/* ── Misc ── */
+.flex-between { display: flex; align-items: center; justify-content: space-between; }
 
 /* ── Responsive ── */
 @media (max-width: 768px) {
