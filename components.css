@@ -1,0 +1,224 @@
+/* ============================================================
+   DEVCRAFT AGENCY — COMPONENTS
+   Buttons · Tags · Badges · Cards · Pills · Skill Bars
+   ============================================================ */
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  padding: 14px 28px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.22s var(--ease-out-expo);
+  text-decoration: none;
+}
+.btn-primary {
+  background: var(--red);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(220,38,38,0.22);
+}
+.btn-primary:hover {
+  background: #b91c1c;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(220,38,38,0.32);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--text);
+  border: 1.5px solid var(--border);
+}
+.btn-outline:hover {
+  border-color: var(--red);
+  color: var(--red);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(220,38,38,0.10);
+}
+.btn-no-shrink { flex-shrink: 0; }
+.btn-full {
+  width: 100%;
+  justify-content: center;
+}
+
+/* ── Tags ── */
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--red);
+  background: var(--red-soft);
+  border: 1px solid rgba(220,38,38,0.18);
+  padding: 4px 10px;
+  border-radius: var(--r-sm);
+  white-space: nowrap;
+  transition: background 0.2s, border-color 0.2s;
+}
+.tag:hover {
+  background: rgba(220,38,38,0.14);
+  border-color: rgba(220,38,38,0.35);
+}
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ── Badges ── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  color: var(--text2);
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  padding: 8px 14px;
+  border-radius: var(--r-sm);
+  transition: border-color 0.2s, color 0.2s;
+}
+.badge:hover { border-color: var(--red); color: var(--red); }
+.badge-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--red);
+  flex-shrink: 0;
+  animation: pulseDot 1.8s ease-in-out infinite;
+}
+
+/* ── Skill Pills ── */
+.skill-pill {
+  font-family: var(--font-mono);
+  font-size: 0.63rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text2);
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  border-radius: 4px;
+  transition: border-color 0.2s, color 0.2s;
+}
+.skill-pill:hover { border-color: var(--red); color: var(--red); }
+
+/* ── Role Pills ── */
+.role-pill {
+  font-family: var(--font-mono);
+  font-size: 0.63rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--red);
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-weight: 600;
+}
+.role-pill.secondary {
+  background: transparent;
+  color: var(--text2);
+  border: 1px solid var(--border);
+}
+.role-pill-violet { background: var(--violet); }
+.role-pill-warm   { background: #E05252; }
+
+/* ── Cards ── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  padding: 40px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  border-color: var(--border2);
+  box-shadow: 0 8px 32px rgba(220,38,38,0.06);
+}
+.card-centered {
+  text-align: center;
+  padding: 72px 48px;
+}
+.card-cta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 48px 56px;
+}
+
+/* ── Skill Bars ── */
+.skill-bar-wrap { padding: 10px 0; }
+.skill-bar-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.skill-bar-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text2);
+}
+.skill-bar-pct {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--red);
+  font-weight: 600;
+}
+.skill-bar-track {
+  height: 5px;
+  background: var(--bg3);
+  border-radius: 100px;
+  overflow: hidden;
+}
+.skill-bar-fill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--red), #f87171);
+  border-radius: 100px;
+  transition: width 1.2s var(--ease-out-expo);
+}
+
+/* ── CTA Banner ── */
+.cta-banner {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  padding: 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-banner::before {
+  content: '';
+  position: absolute;
+  top: -60px; left: 50%;
+  transform: translateX(-50%);
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(220,38,38,0.07), transparent 70%);
+  pointer-events: none;
+}
+.cta-banner h2  { margin-bottom: 20px; }
+.cta-banner p   { margin-bottom: 40px; }
+.cta-actions    { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+
+/* ── Btn Group Center ── */
+.btn-group-center {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .cta-banner { padding: 48px 24px; }
+  .card-cta-row { padding: 36px 28px; flex-direction: column; align-items: flex-start; }
+  .card-centered { padding: 48px 24px; }
+}
