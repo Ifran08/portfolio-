@@ -5,53 +5,146 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact — DevCraft Agency</title>
   <meta name="description" content="Start a project with DevCraft — tell us about your goals."/>
-<link rel="stylesheet" href="style.css" />
-<link rel="stylesheet" href="nav.css" />
-<link rel="stylesheet" href="pages.css" />
-<link rel="stylesheet" href="footer.css" />
-<link rel="stylesheet" href="hero.css" />
-<link rel="stylesheet" href="sections.css" />
-  <link rel="stylesheet" href="base.css" />
-<link rel="stylesheet" href="animations.css" />
-<link rel="stylesheet" href="components.css" />
-  <style>
-    .contact-form { display:flex; flex-direction:column; gap:12px; }
-    .form-input { width:100%; padding:12px 14px; border:1px solid var(--border); border-radius:8px; font-size:1rem }
-    .sr-only { position:absolute; left:-9999px; }
-    .card { padding:28px }
-  </style>
+  <link rel="stylesheet" href="variables.css" />
+  <link rel="stylesheet" href="extras.css" />
+  <link rel="stylesheet" href="nav.css" />
+  <link rel="stylesheet" href="pages.css" />
+  <link rel="stylesheet" href="footer.css" />
 </head>
 <body>
   <div id="nav-placeholder"></div>
   <main class="page-wrap">
+
     <div class="page-hero">
       <div class="container">
-        <div class="breadcrumb"><a href="index.html">Home</a><span class="breadcrumb-sep">›</span>Contact</div>
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-sep">›</span>
+          Contact
+        </div>
         <div class="mono-label">Get in touch</div>
-        <h1 class="display-2">Let's build something<br><span class="accent">great.</span></h1>
-        <p class="lead">Tell us about your project — we'll respond within 24 hours.</p>
+        <h1 class="display-2 anim-fade-up">Let's build something<br><span class="accent">great.</span></h1>
+        <p class="lead lead-constrained anim-fade-up delay-1">Tell us about your project — we'll respond within 24 hours.</p>
       </div>
     </div>
+
     <section class="section">
       <div class="container">
-        <div class="card">
-          <form action="#" class="contact-form">
-            <label class="sr-only">Name</label>
-            <input type="text" name="name" placeholder="Your name" class="form-input" />
-            <label class="sr-only">Email</label>
-            <input type="email" name="email" placeholder="Your email" class="form-input" />
-            <label class="sr-only">Message</label>
-            <textarea name="message" rows="6" placeholder="Tell us about your project" class="form-input"></textarea>
-            <div style="margin-top:18px;">
-              <button class="btn btn-primary" type="submit">Send Message</button>
+        <div class="contact-layout">
+
+          <!-- Form -->
+          <div class="contact-form-card reveal">
+            <div class="mono-label">Send a Message</div>
+            <h2 class="display-3" style="margin-bottom:28px;">Start the conversation</h2>
+            <form action="#" class="contact-form" onsubmit="handleSubmit(event)">
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="name">Your Name</label>
+                  <input type="text" id="name" name="name" placeholder="Mohammad Irfan" class="form-input" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="email">Email Address</label>
+                  <input type="email" id="email" name="email" placeholder="hello@example.com" class="form-input" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="subject">Project Type</label>
+                <input type="text" id="subject" name="subject" placeholder="E-commerce site, Portfolio, Dashboard..." class="form-input" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="budget">Budget Range</label>
+                <input type="text" id="budget" name="budget" placeholder="e.g. $1,000 – $5,000" class="form-input" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="message">Tell us about your project</label>
+                <textarea id="message" name="message" rows="6" placeholder="Describe your goals, timeline, and any specific requirements..." class="form-input"></textarea>
+              </div>
+              <div class="form-actions">
+                <button class="btn btn-primary" type="submit" style="width:100%;padding:16px;">Send Message →</button>
+              </div>
+              <div id="form-success" style="display:none;text-align:center;padding:16px;background:rgba(110,255,196,0.08);border:1px solid rgba(110,255,196,0.2);border-radius:8px;color:#6EFFC4;font-size:0.88rem;">
+                ✅ Message sent! We'll get back to you within 24 hours.
+              </div>
+            </form>
+          </div>
+
+          <!-- Info Panel -->
+          <div>
+            <div class="contact-info-card reveal delay-2">
+              <h3>Contact Info</h3>
+              <div class="contact-info-item">
+                <div class="contact-info-icon">✉️</div>
+                <div class="contact-info-text">
+                  <strong>Email</strong>
+                  hello@devcraft.agency
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-info-icon">⚡</div>
+                <div class="contact-info-text">
+                  <strong>Response Time</strong>
+                  Within 24 hours
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-info-icon">🌍</div>
+                <div class="contact-info-text">
+                  <strong>Location</strong>
+                  Remote — Available worldwide
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-info-icon">🕒</div>
+                <div class="contact-info-text">
+                  <strong>Working Hours</strong>
+                  Mon–Sat, 9AM – 8PM IST
+                </div>
+              </div>
             </div>
-          </form>
+
+            <div class="contact-info-card reveal delay-3" style="margin-top:20px;">
+              <h3>What to Expect</h3>
+              <div class="contact-info-item">
+                <div class="contact-info-icon">1️⃣</div>
+                <div class="contact-info-text">
+                  <strong>Discovery Call</strong>
+                  We discuss your goals, scope, and timeline.
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-info-icon">2️⃣</div>
+                <div class="contact-info-text">
+                  <strong>Proposal</strong>
+                  You receive a detailed plan with pricing.
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-info-icon">3️⃣</div>
+                <div class="contact-info-text">
+                  <strong>We Build</strong>
+                  Weekly updates, transparent progress.
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
+
   </main>
   <div id="footer-placeholder"></div>
   <script src="components.js"></script>
-  <script src="js/nav.js"></script>
+  <script src="nav.js"></script>
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      document.getElementById('form-success').style.display = 'block';
+      e.target.reset();
+      setTimeout(() => {
+        document.getElementById('form-success').style.display = 'none';
+      }, 5000);
+    }
+  </script>
 </body>
 </html>
