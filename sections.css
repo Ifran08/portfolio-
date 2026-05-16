@@ -1,0 +1,233 @@
+/* ============================================================
+   DEVCRAFT AGENCY — SECTIONS (index page)
+   Services Grid · Stats · Process · Team Preview
+   ============================================================ */
+
+/* ══ SERVICES GRID ══ */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.service-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 36px 30px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  color: inherit;
+}
+.service-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(220,38,38,0.04), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.service-card:hover {
+  border-color: rgba(220,38,38,0.30);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 36px rgba(220,38,38,0.08);
+}
+.service-card:hover::before { opacity: 1; }
+.service-card-num {
+  position: absolute;
+  top: 24px; right: 24px;
+  font-family: var(--font-mono);
+  font-size: 0.63rem;
+  color: var(--text3);
+  letter-spacing: 0.08em;
+}
+.service-card-icon {
+  width: 48px; height: 48px;
+  border-radius: var(--r-sm);
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  margin-bottom: 22px;
+  transition: background 0.3s, border-color 0.3s;
+}
+.service-card:hover .service-card-icon {
+  background: var(--red-soft);
+  border-color: rgba(220,38,38,0.25);
+}
+.service-card h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.08rem;
+  color: var(--text);
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+.service-card p {
+  font-size: 0.87rem;
+  color: var(--text2);
+  line-height: 1.65;
+  margin-bottom: 22px;
+}
+.service-card-link {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--red);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: gap 0.2s;
+}
+.service-card:hover .service-card-link { gap: 14px; }
+.service-card-full { grid-column: span 3; }
+
+/* ══ STATS ══ */
+.stats-section {
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 80px 0;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border);
+}
+.stat-item {
+  background: var(--bg2);
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: background 0.2s;
+}
+.stat-item:hover { background: var(--red-soft); }
+
+/* ══ PROCESS ══ */
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+}
+.process-steps::before {
+  content: '';
+  position: absolute;
+  top: 27px; left: 10%;
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), var(--border), transparent);
+}
+.process-step { padding: 0 20px; }
+.process-step-num {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--red);
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+  transition: border-color 0.3s, background 0.3s, box-shadow 0.3s;
+}
+.process-step:hover .process-step-num {
+  border-color: var(--red);
+  background: var(--red-soft);
+  box-shadow: 0 0 0 6px rgba(220,38,38,0.08);
+}
+.process-step h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.98rem;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+.process-step p { font-size: 0.84rem; color: var(--text2); line-height: 1.6; }
+
+/* ══ TEAM PREVIEW ══ */
+.team-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.team-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.team-card:hover {
+  border-color: var(--border2);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 32px rgba(220,38,38,0.07);
+}
+.team-card-header {
+  padding: 32px 28px 24px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.team-avatar {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--red), #f87171);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #fff;
+  flex-shrink: 0;
+}
+.team-avatar-shoaib { background: linear-gradient(135deg, var(--violet), var(--cyan)); }
+.team-avatar-saad   { background: linear-gradient(135deg, #E05252, #F59E0B); }
+.team-card-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.team-card-role {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+.team-card-body   { padding: 20px 28px; }
+.team-card-body p { font-size: 0.86rem; color: var(--text2); line-height: 1.65; margin-bottom: 18px; }
+.team-card-skills { display: flex; flex-wrap: wrap; gap: 6px; }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .stats-grid    { grid-template-columns: repeat(2, 1fr); }
+  .process-steps { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+  .process-steps::before { display: none; }
+  .team-cards    { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .services-grid   { grid-template-columns: 1fr; }
+  .service-card-full { grid-column: span 1; }
+  .team-cards      { grid-template-columns: 1fr; }
+  .process-steps   { grid-template-columns: 1fr; }
+  .stats-section   { padding: 48px 0; }
+  .stat-item       { padding: 28px 24px; }
+}
