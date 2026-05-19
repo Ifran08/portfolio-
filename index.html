@@ -6,67 +6,147 @@
   <script type="text/javascript">
     (function (l) {
       if (l.search[1] === "/") {
-        var decoded = l.search
-          .slice(1)
-          .split("&")
-          .map(function (s) {
-            return s.replace(/~and~/g, "&");
-          })
-          .join("?");
-        window.history.replaceState(
-          null,
-          null,
-          l.pathname.slice(0, -1) + decoded + l.hash
-        );
+        var decoded = l.search.slice(1).split("&").map(function (s) {
+          return s.replace(/~and~/g, "&");
+        }).join("?");
+        window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
       }
     })(window.location);
   </script>
   <title>DevCraft — Modern Web Design &amp; Development Agency</title>
   <meta name="description" content="We build modern websites, dashboards, and digital experiences that perform." />
-<link rel="stylesheet" href="style.css" />
-<link rel="stylesheet" href="nav.css" />
-<link rel="stylesheet" href="pages.css" />
-<link rel="stylesheet" href="footer.css" />
-<link rel="stylesheet" href="hero.css" />
-<link rel="stylesheet" href="sections.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="nav.css" />
+  <link rel="stylesheet" href="pages.css" />
+  <link rel="stylesheet" href="footer.css" />
+  <link rel="stylesheet" href="hero.css" />
+  <link rel="stylesheet" href="sections.css" />
   <link rel="stylesheet" href="base.css" />
-<link rel="stylesheet" href="animations.css" />
-<link rel="stylesheet" href="components.css" />
+  <link rel="stylesheet" href="animations.css" />
+  <link rel="stylesheet" href="components.css" />
+  <link rel="stylesheet" href="hero-video.css" />
 </head>
-<body>
+<body class="hero-page">
+
+  <!-- Cursor glow -->
+  <div class="cursor-glow" aria-hidden="true"></div>
+
   <div id="nav-placeholder"></div>
 
-  <main class="page-wrap">
+  <main class="page-wrap" style="padding-top:0">
 
-    <!-- ══ HERO ══ -->
-    <section class="hero">
-      <div class="hero-bg">
-        <div class="hero-grid-bg"></div>
-        <div class="hero-orb hero-orb-1"></div>
-        <div class="hero-orb hero-orb-2"></div>
+    <!-- ══ CINEMATIC HERO ══ -->
+    <section class="hero-cinematic" aria-label="Hero">
+
+      <!-- ░░ Video Background ░░ -->
+      <div class="hero-video-wrap" aria-hidden="true">
+        <video
+          id="heroBgVideo"
+          class="hero-bg-video"
+          autoplay
+          loop
+          muted
+          playsinline
+          preload="auto"
+          aria-hidden="true"
+        >
+          <source src="hero-globe.mp4" type="video/mp4" />
+        </video>
       </div>
-      <div class="container">
-        <div class="hero-content">
-          <div class="hero-eyebrow anim-fade-up">
-            <div class="hero-eyebrow-dot"></div>
-            Web Design &amp; Development Agency
-          </div>
-          <h1 class="display-1 anim-fade-up delay-1">
-            We craft<br><em>digital</em><br>experiences.
-          </h1>
-          <p class="lead hero-desc anim-fade-up delay-2">
-            From pixel-perfect interfaces to scalable full-stack applications — DevCraft builds modern websites, dashboards, and digital products that perform and impress.
-          </p>
-          <div class="hero-actions anim-fade-up delay-3">
-            <a href="contact.html" class="btn btn-primary">Start a Project →</a>
-            <a href="services.html" class="btn btn-outline">Explore Services</a>
+
+      <!-- ░░ Overlays ░░ -->
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-glow-accent" aria-hidden="true"></div>
+
+      <!-- ░░ Particles ░░ -->
+      <div class="hero-particles" aria-hidden="true"></div>
+
+      <!-- ░░ Decorative corner glass panels ░░ -->
+      <div class="hero-deco-panel hero-deco-tl" aria-hidden="true">
+        <div class="glass-panel">
+          <div class="glass-panel-inner">
+            STATUS <span class="val accent">● LIVE</span><br>
+            STACK &nbsp;<span class="val">NEXT.JS 15</span><br>
+            PERF &nbsp;&nbsp;<span class="val">99 / 100</span>
           </div>
         </div>
       </div>
-      <div class="hero-scroll">
-        <div class="hero-scroll-line"></div>
-        Scroll
+      <div class="hero-deco-panel hero-deco-tr" aria-hidden="true">
+        <div class="glass-panel">
+          <div class="glass-panel-inner">
+            CLIENTS &nbsp;<span class="val">30+</span><br>
+            PROJECTS <span class="val">50+</span><br>
+            RATING &nbsp;&nbsp;<span class="val accent">★ 5.0</span>
+          </div>
+        </div>
       </div>
+
+      <!-- ░░ Content ░░ -->
+      <div class="hero-cinematic-content">
+
+        <div class="hero-eyebrow-glass">
+          <span class="hero-eyebrow-dot-live"></span>
+          Web Design &amp; Development Agency
+        </div>
+
+        <h1 class="hero-headline">
+          We Build Digital<br>
+          <em>Experiences</em> That<br>
+          Move the Future
+        </h1>
+
+        <p class="hero-subheadline">
+          Creative web design, development, and branding for modern startups
+          and ambitious businesses.
+        </p>
+
+        <div class="hero-cta-row">
+          <a href="contact.html" class="btn-hero-primary">
+            Start a Project
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="services.html" class="btn-hero-ghost">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            View Work
+          </a>
+        </div>
+
+        <div class="hero-stats-row">
+          <div class="hero-stat-pill">
+            <strong>50+</strong>
+            <span class="stat-sep"></span>
+            Projects
+          </div>
+          <div class="hero-stat-pill">
+            <strong>30+</strong>
+            <span class="stat-sep"></span>
+            Happy Clients
+          </div>
+          <div class="hero-stat-pill">
+            <strong>100%</strong>
+            <span class="stat-sep"></span>
+            Satisfaction
+          </div>
+          <div class="hero-stat-pill">
+            <strong>3</strong>
+            <span class="stat-sep"></span>
+            Expert Devs
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ░░ Scroll cue ░░ -->
+      <div class="hero-scroll-cue" aria-hidden="true">
+        <div class="scroll-mouse">
+          <div class="scroll-mouse-dot"></div>
+        </div>
+        <span>Scroll</span>
+      </div>
+
+      <!-- ░░ Bottom blur fade ░░ -->
+      <div class="hero-bottom-blur" aria-hidden="true"></div>
+
     </section>
 
     <!-- ══ MARQUEE ══ -->
@@ -84,7 +164,6 @@
         <div class="marquee-item">REST APIs</div>
         <div class="marquee-item">UI/UX Design</div>
         <div class="marquee-item">Full Stack</div>
-        <!-- duplicate for seamless    loop -->
         <div class="marquee-item">React.js</div>
         <div class="marquee-item">Next.js</div>
         <div class="marquee-item">Node.js</div>
@@ -310,5 +389,6 @@
 
   <script src="components.js"></script>
   <script src="nav.js"></script>
+  <script src="hero-video.js"></script>
 </body>
 </html>
