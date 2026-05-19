@@ -64,4 +64,70 @@
   .hero-video-overlay {
     background: rgba(255,255,255,0.82);
   }
+}/* ============================================================
+   DEVCRAFT — VIDEO HERO ONLY
+   Adds the video background to .hero, nothing else changes.
+   ============================================================ */
+
+/* Make the hero position:relative so the video can sit absolute inside */
+.hero--video {
+  background: transparent;
+}
+
+/* Video layer — absolute behind everything */
+.hero-video-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero-video-bg video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Overlay: keeps existing text colours readable on the dark video */
+.hero-video-overlay {
+  position: absolute;
+  inset: 0;
+  /* light-to-dark: left side (text area) is heavily masked, right side shows globe */
+  background:
+    linear-gradient(
+      105deg,
+      rgba(255,255,255,0.92) 0%,
+      rgba(255,255,255,0.80) 38%,
+      rgba(255,255,255,0.30) 60%,
+      rgba(255,255,255,0.08) 100%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.40) 0%,
+      transparent 30%,
+      transparent 70%,
+      rgba(255,255,255,0.40) 100%
+    );
+}
+
+/* Push all existing hero child layers above the video */
+.hero--video .hero-bg,
+.hero--video .container,
+.hero--video .hero-scroll {
+  position: relative;
+  z-index: 1;
+}
+
+/* Tone down the orbs slightly so video shows through on the right */
+.hero--video .hero-orb-1 { opacity: 0.45; }
+.hero--video .hero-orb-2 { opacity: 0.35; }
+
+/* On mobile: use a simpler darker overlay so text stays legible */
+@media (max-width: 768px) {
+  .hero-video-overlay {
+    background: rgba(255,255,255,0.82);
+  }
 }
